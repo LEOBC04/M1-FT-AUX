@@ -19,7 +19,18 @@
 
 var controlAcces = function(queue, event){
     // Tu código aca:
+    let getIn = [];
+    let ticketNumber = [];
 
+    while(queue.size()) {
+      let aux = queue.dequeue();
+
+      if (aux.age >= 18 && aux.ticket.event === event && !ticketNumber.includes(aux.ticket.number)) {
+        getIn.push(aux.fullname)
+        ticketNumber.push(aux.ticket.number)
+      }
+    }
+   return getIn
   };
       
   
